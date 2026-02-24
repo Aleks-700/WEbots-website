@@ -2,23 +2,36 @@
 @import url('https://fonts.cdnfonts.com/css/smw-text-nc');
 
 *{
-  margin:0px;
-  padding:0px;
+  margin:0;
+  padding:0;
+  box-sizing: border-box;
   font-family: "Poppins", sans-serif;
-  text-align:center;
-  height:100%;
   color: #f7f7f7;
-    
 }
-header{
-    
-  display:flex;
-  height:60px;
-  width:100%;
-  margin-top: 10px;
+
+html, body{
+  height: 100%;
+  width: 100%;
+  overflow-x: hidden;
+}
+
+body{
   text-align: center;
-  justify-content: space-between;
-  }
+}
+
+html{
+  scroll-behavior: smooth;
+}
+
+header{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  padding: 10px 5%;
+  width:100%;
+  height:auto;
+  margin-top: 10px;
+}
 
 h1{
   margin:0px;
@@ -67,15 +80,14 @@ p{
 }
 
 .info{
+  width: 55%;
   margin-top: 15%;
-  display:table-cell;
-  vertical-align:center;
-  text-align:left;
-  width:50%;
+  display: block;
+  text-align: left;
   font-size: 25px;
   height:auto;
-
 }
+
 .logo{
   display:flex;
   padding-right:5px;
@@ -90,8 +102,8 @@ p{
 
 .container{
   scroll-snap-type: y mandatory;
-  overflow-y: scroll;
-  height:100%;
+  overflow-y: auto;
+  height:100vh;
   width:100%;
 }
 
@@ -100,9 +112,7 @@ section{
     
   display: flex;
   justify-content: center;
-  scroll-snap-align: start;
-  scroll-behavior: smooth;
-    
+  scroll-snap-align: start; 
     
 }
   /*this modifys the main logo section 1 */
@@ -213,6 +223,9 @@ section{
     
   }
 
+.one header{
+  justify-content: space-between;
+}
 
 .two{
     display: flex;
@@ -234,14 +247,14 @@ section{
 
 
 .slides{
-  max-height:70%;
-  max-width:60%;
+  width: 45%;
+  height: 70%;
   overflow:hidden;
   position:relative;
   margin: 10% 5%;
-  padding-left:35%;
-
+  padding-left: 0;
 }
+
 .slide{
   position:absolute;
   opacity:0 ;
@@ -257,6 +270,12 @@ section{
 .slide-3{
   
   animation-delay:8s;
+}
+
+img{
+  max-width: 100%;
+  height: auto;
+  display: block;
 }
 
 .slide img{
@@ -318,20 +337,6 @@ section{
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
   background-color: #36a318;      /* slightly brighter green */
 }
-
- 
-  @media (max-width: 900px){
-
-    section .cards{
-      flex-direction: column;
-    }
-  }
-  
-
-
-
-
-
 
   .four{
     background-color: #6c6c6c;
@@ -403,3 +408,157 @@ section{
   transition: 0.7s;
  }
   
+ .logo-img{
+  display: inline-block;
+  height: 40px;
+  width: auto;
+}
+
+#section-2, 
+#section-3, 
+#section-4, 
+#section-6{
+  scroll-margin-top: 90px;
+}
+
+section{
+  min-height: 100vh;
+}
+
+ /* For Mobile Compatibility */
+@media (max-width: 900px){
+
+  .container{
+    scroll-snap-type: none;
+    overflow-y: visible;
+    height: auto;
+  }
+
+  section{
+    scroll-snap-align: none;
+    min-height: auto;
+  }
+
+  header{
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .nav-bar ul{
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 8px;
+    padding: 0 10px;
+  }
+
+  .nav-bar ul li a{
+    font-size: 16px;
+    padding: 8px 14px;
+    margin: 0;
+  }
+
+  .one{
+    padding-left: 5%;
+    padding-right: 5%;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
+  }
+
+  .main-logo{
+    position: static;
+    max-width: 85%;
+    max-height: none;
+    margin-top: 40px;
+  }
+
+  .banner{
+    position: static;
+    width: 90%;
+    height: auto;
+    padding: 14px;
+    margin-top: 20px;
+  }
+
+  .typewriter h1{
+    font-size: 24px;
+    letter-spacing: 0.06em;
+  }
+
+  .two{
+    flex-direction: column;
+    justify-content: center;
+    padding-left: 5%;
+    padding-right: 5%;
+    background: #1F1F1F;
+  }
+
+  .slides{
+    width: 100%;
+    max-width: 100%;
+    height: 240px;
+    margin: 20px 0;
+    padding-left: 0;
+  }
+
+  .info{
+    width: 100%;
+    margin-top: 0;
+    display: block;
+    font-size: 18px;
+    text-align: left;
+  }
+
+  p{
+    font-size: 16px;
+    line-height: 1.4;
+  }
+
+  h4{
+    margin-top: 20px;
+    font-size: 18px;
+  }
+
+  section .cards{
+    flex-direction: column;
+  }
+
+  .six{
+    flex-direction: column;
+    padding-left: 5%;
+    padding-right: 5%;
+    background: #1F1F1F;
+  }
+
+  .contact-us{
+    width: 100%;
+    margin-top: 20px;
+    display: block;
+    font-size: 18px;
+  }
+
+  .contact-info{
+    width: 100%;
+    margin: 20px 0;
+    height: auto;
+    gap: 12px;
+  }
+
+  .button{
+    width: 70px;
+    height: 70px;
+    margin: 0;
+    padding: 12px;
+    border-radius: 18px;
+  }
+
+  .contact-info .button:hover{
+    width: 70px;
+    transition: none;
+  }
+
+  #robot{
+    width: 160px;
+    height: auto;
+  }
+}
